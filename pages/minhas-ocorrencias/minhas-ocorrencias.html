@@ -1,0 +1,26 @@
+<ion-header color="secondary">
+
+  <ion-navbar color="secondary">
+    <ion-title>Minhas Ocorrências</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="background">
+  <ion-list>
+      <ion-item *ngFor="let ocorrencia of ocorrencias">
+        <h2>{{ocorrencia.descricao}}</h2>
+      <p>{{ocorrencia.data}}</p>
+      <p *ngIf="ocorrencia.id_tipo == 1">Roubo</p>
+      <p *ngIf="ocorrencia.id_tipo == 2">Furto</p>
+      <p *ngIf="ocorrencia.id_tipo == 3">Sequestro</p>
+      <p *ngIf="ocorrencia.id_tipo == 4">Arrombamento</p>
+      <p *ngIf="ocorrencia.id_tipo == 5">Tiroteio</p>
+      <p *ngIf="ocorrencia.id_tipo == 6">Homicidio</p>
+      <p *ngIf="ocorrencia.id_tipo == 7">Tráfico de Drogas</p>
+      </ion-item>
+
+  </ion-list>
+
+</ion-content>

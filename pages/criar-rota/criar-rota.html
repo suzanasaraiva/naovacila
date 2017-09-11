@@ -1,0 +1,31 @@
+<ion-header>
+  
+  <ion-toolbar color="secondary">
+    <ion-buttons left>
+      <button ion-button (click)="doYourStuff()">
+          <ion-icon class="customIcon" name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Criar Rota Segura</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-searchbar [(ngModel)]="autocomplete.query" [showCancelButton]="true" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of autocompleteItems" tappable (click)="chooseItem(item)">
+      {{ item }}
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="time" item-start></ion-icon>
+      Histórico
+    </ion-item>
+
+    <ion-item *ngFor="let item of listaHistorico" tappable (click)="chooseItem(item)">
+      {{item}}
+    </ion-item>
+
+  </ion-list>
+</ion-content>

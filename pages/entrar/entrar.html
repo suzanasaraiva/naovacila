@@ -1,0 +1,39 @@
+<ion-header>
+    
+      <ion-navbar color="primary">
+        <ion-title>Cadastro</ion-title>
+      </ion-navbar>
+    
+    </ion-header>
+    
+    
+    <ion-content>
+      <ion-list no-lines>
+        <form [formGroup]="registerForm">
+          <ion-item>
+            <ion-label floating>E-mail</ion-label>
+            <ion-input formControlName="Email" [class.invalid]="!registerForm.controls.Email.valid && (registerForm.controls.Email.dirty)"
+              [(ngModel)]="user.Email" type="email"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!registerForm.controls.Email.valid && registerForm.controls.Email.dirty">
+            <p>Forneça um e-mail válido</p>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Senha</ion-label>
+            <ion-input formControlName="Password" [class.invalid]="!registerForm.controls.Password.valid && (registerForm.controls.Password.dirty)" [(ngModel)]="user.Password" type="password"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!registerForm.controls.Password.valid && registerForm.controls.Password.dirty">
+            <p>Preencha a senha</p>
+          </ion-item>
+        </form>
+      </ion-list>
+      <p *ngIf="error">Wrong Email or Password</p>
+    </ion-content>
+    
+    
+    
+    <ion-footer>
+      <ion-toolbar>
+        <button ion-button full (click)="entrar()">Entrar</button>
+      </ion-toolbar>
+    </ion-footer>

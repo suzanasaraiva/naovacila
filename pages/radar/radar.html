@@ -1,0 +1,39 @@
+<!--
+  Generated template for the RadarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Radar</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="card-background-page">
+
+  <ion-card (tap)="abrirNoticias()">
+    <img src="./assets/imagens/image_noticias.png"/>
+    <div class="card-title"> Notícias</div>
+  </ion-card>
+
+  <ion-card (click)="abrirEstatisticas()">
+    <img src="./assets/imagens/image_estatistica.jpg"/>
+    <div class="card-title"> Estatísticas</div>
+  </ion-card>
+
+  <ion-card (click)="abrirMinhasOcorrencias()">
+    <img src="./assets/imagens/image_ocorrencias.png"/>
+    <div class="card-title"> Minhas Ocorrências</div>
+  </ion-card>
+
+  <ion-card (click)="abrirMeusRadares()">
+    <img src="./assets/imagens/image_rotas.png"/>
+    <div class="card-title"> Meus Radares</div>
+  </ion-card>
+
+  
+</ion-content>
